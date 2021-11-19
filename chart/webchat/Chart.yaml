@@ -1,0 +1,6 @@
+apiVersion: v2
+name: webchat
+description: A Helm chart for kubernetes
+type: application
+version: 1.0.7-10
+appVersion: 1.0.7-10

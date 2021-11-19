@@ -1,0 +1,43 @@
+replicaCount: 2
+terminationGracePeriodSeconds: 5
+
+image:
+  repository: docker.ehsan.cf/webchat
+  pullPolicy: IfNotPresent
+  tag: ""
+
+imagePullSecrets:
+  - name: "my-pullsecret"
+
+nameOverride: "webchat"
+fullnameOverride: "webchat"
+serviceAccount:
+  create: false
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext:
+ fsGroup: 2000
+
+securityContext:
+ readOnlyRootFilesystem: false
+ runAsNonRoot: true
+ runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 8080
+  targetPort: 8080
+
+resources:
+ limits:
+   cpu: 100m
+   memory: 128Mi
+ requests:
+   cpu: 100m
+   memory: 128Mi
+nodeSelector: {}
+tolerations: []
+affinity: {}
