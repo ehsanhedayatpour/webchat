@@ -1,4 +1,4 @@
-replicaCount: 2
+replicaCount: 1
 terminationGracePeriodSeconds: 5
 
 image:
@@ -6,8 +6,8 @@ image:
   pullPolicy: IfNotPresent
   tag: ""
 
-imagePullSecrets:
-  - name: "my-pullsecret"
+imagePullSecrets: []
+  #- name: "my-pullsecret"
 
 nameOverride: "webchat"
 fullnameOverride: "webchat"
